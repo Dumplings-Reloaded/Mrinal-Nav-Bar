@@ -6,6 +6,7 @@ let searchController = {
       err ? console.log(err) : res.status(200).json(searchResults);
     });
   }
+
 };
 
 module.exports = searchController;

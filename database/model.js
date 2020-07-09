@@ -63,7 +63,6 @@ let model = {
           })
       })
       .catch(err => console.log(err))
-
   }
 };
 
