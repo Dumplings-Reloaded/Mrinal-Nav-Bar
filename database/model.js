@@ -63,6 +63,38 @@ let model = {
           })
       })
       .catch(err => console.log(err))
+  },
+
+  postData: (body, callback) => {
+    let newProductModel = new productModel(body);
+
+    newProductModel.save()
+    .then(() => {
+      callback(null, 'Posted');
+    })
+    .catch(err => {
+      callback(err);
+    })
+  },
+
+  updateData: (params, body, callback) => {
+    productModel.findByIdAndUpdate(params, body, {new: true},(err, result) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, 'Updated');
+      }
+    })
+  },
+
+  deleteData: (params, callback) => {
+    productModel.findByIdAndRemove(params, (err, result) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, 'Deleted');
+      }
+    })
   }
 };
 

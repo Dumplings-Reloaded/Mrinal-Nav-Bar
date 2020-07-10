@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { createProducts, createMiscPages } = require('./seed.js')
 
 let url = 'mongodb://localhost/navbar'; // connect to local DB: "navbar"
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 let Schema = mongoose.Schema;
 
