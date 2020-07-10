@@ -69,3 +69,12 @@ npm install -g webpack
 npm install
 ```
 
+### CRUD Operations
+```sh
+Get Request: '/search'
+Post Request: '/post'
+Delete Request: '/delete/:id'
+Update Request: '/update/:id'
+```
+
+

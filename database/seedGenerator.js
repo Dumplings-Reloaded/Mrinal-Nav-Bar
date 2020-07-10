@@ -44,6 +44,7 @@ let seedItemsIntoModel = (items, model) => {
   model.insertMany(itemList, (err) => {
     err ? console.log(err) : console.log('unit was seeded');
   });
+  
 }
 
 let seedModelAndMethods = {
