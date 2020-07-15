@@ -2,7 +2,7 @@ const { client } = require('./index.js');
 
 const model = {
   getData: (callback) => {
-    client.query(`SELECT * FROM productInfo`, (err, result) => {
+    client.query(`SELECT * FROM products`, (err, result) => {
       if(err) {
         callback(err);
       } else {
@@ -12,7 +12,7 @@ const model = {
   },
 
   postData: (body, callback) => {
-    client.query(`INSERT INTO productInfo (name, price, img) VALUES ('${body.name}', ${body.price}, '${body.img}');`, (err, result) => {
+    client.query(`INSERT INTO products (name, price, img) VALUES ('${body.name}', ${body.price}, '${body.img}');`, (err, result) => {
       if(err) {
         callback(err);
       } else {
@@ -22,7 +22,7 @@ const model = {
   },
 
   updateData: (id, body, callback) => {
-    client.query(`UPDATE productInfo SET name = '${body.name}', price = ${body.price}, img = '${body.img}' WHERE id=${id}`, (err, result) => {
+    client.query(`UPDATE products SET name = '${body.name}', price = ${body.price}, img = '${body.img}' WHERE id=${id}`, (err, result) => {
       if(err) {
         callback(err);
       } else {
@@ -32,7 +32,7 @@ const model = {
   },
 
   deleteData: (id, callback) => {
-    client.query(`DELETE FROM productInfo WHERE id = ${id}`, (err, result) => {
+    client.query(`DELETE FROM products WHERE id = ${id}`, (err, result) => {
       if(err) {
         callback(err);
       } else {
