@@ -6,6 +6,10 @@ router
   .get(searchController.displaySearch);
 
 router
+  .route('/get')
+  .get(searchController.getSearch);
+
+router
   .route('/post')
   .post(searchController.addSearch);
 

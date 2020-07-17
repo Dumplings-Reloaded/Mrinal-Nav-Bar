@@ -16,21 +16,6 @@ client.query('SELECT $1::text as message', ['DB Connected!'], (err, res) => {
   // client.end()
 })
 
-// var pool = new pg({
-//   user: 'root',
-//   host: 'localhost',
-//   database: 'newproducts',
-//   password: '',
-//   port: 5432
-// });
 
 module.exports = { client };
 
-// const Pool = require('pg').Pool
-// const pool = new Pool({
-//   user: '',
-//   host: 'localhost',
-//   database: 'SDC',
-//   password: '',
-//   port: 5432,
-// })

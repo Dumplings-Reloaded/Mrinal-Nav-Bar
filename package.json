@@ -29,6 +29,7 @@
     "postgres": "^1.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "simpl-schema": "^1.8.1",
     "webpack": "^4.43.0"
   },
   "devDependencies": {

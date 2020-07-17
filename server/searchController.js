@@ -7,6 +7,12 @@ let searchController = {
     });
   },
 
+  getSearch: (req, res) => {
+    model.getData((err, searchResults) => {
+      err ? console.log(err) : res.status(200).json(searchResults);
+    });
+  },
+
   addSearch: (req, res) => {
     model.postData(req.body, (err, postResult) => {
       err ? console.log(err) : res.status(202).json(postResult);

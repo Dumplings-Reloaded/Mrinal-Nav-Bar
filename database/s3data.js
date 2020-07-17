@@ -111,13 +111,13 @@ var generatePrice = () => {
 }
 
 var generateImg = () => {
-  var randomImg = 'https://mock-website-glossier.s3-us-west-1.amazonaws.com/gettyimages-1176299915-2048x2048.jpg';
+  var randomImg = 'shorturl.at/dqAJ3';
 
   return randomImg;
 }
 
 var generateSeed = () => {
-  const writeContent = fs.createWriteStream('./database/content2.csv');
+  const writeContent = fs.createWriteStream('./database/contentwo.csv');
   writeContent.write('id,name,price,img\n', 'utf8');
 
   function writeTenMillion(writer, encoding, callback) {
