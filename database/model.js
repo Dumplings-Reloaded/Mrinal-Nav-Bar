@@ -1,4 +1,4 @@
-const { productModel, popularSuggestionsModel, categoryModel, pagesModel } = require('./index.js');
+const { productModel } = require('./index.js');
 
 let model = {
   // fetches search result
@@ -18,51 +18,62 @@ let model = {
         $regex: `${search}`,
         $options: 'i'
       }
-    }).limit(3).exec()
+    }).limit(5).exec()
       .then((results) => {
         searchData.products = results;
       })
 
-      .then(() => {
-        pagesModel.find({
-          page_name: {
-            $regex: `${search}`,
-            $options: 'i'
-          }
-        }).limit(3).exec()
-          .then((results) => {
-            searchData.pages = results;
-          })
+      // .then(() => {
+      //   pagesModel.find({
+      //     page_name: {
+      //       $regex: `${search}`,
+      //       $options: 'i'
+      //     }
+      //   }).limit(3).exec()
+      //     .then((results) => {
+      //       searchData.pages = results;
+      //     })
 
-          .then(() => {
-            categoryModel.find({
-              page_name: {
-                $regex: `${search}`,
-                $options: 'i'
-              }
-            }).limit(3).exec()
-              .then((results) => {
-                searchData.categories = results;
-              })
+      //     .then(() => {
+      //       categoryModel.find({
+      //         page_name: {
+      //           $regex: `${search}`,
+      //           $options: 'i'
+      //         }
+      //       }).limit(3).exec()
+      //         .then((results) => {
+      //           searchData.categories = results;
+      //         })
 
-              .then(() => {
-                popularSuggestionsModel.find({
-                  page_name: {
-                    $regex: `${search}`,
-                    $options: 'i'
-                  }
-                }).limit(4).exec()
-                  .then((results) => {
-                    searchData.popularSuggestions = results;
-                  })
+      //         .then(() => {
+      //           popularSuggestionsModel.find({
+      //             page_name: {
+      //               $regex: `${search}`,
+      //               $options: 'i'
+      //             }
+      //           }).limit(4).exec()
+      //             .then((results) => {
+      //               searchData.popularSuggestions = results;
+      //             })
 
                   .then(() => {
                     callback(null, searchData)
                   })
-              })
-          })
-      })
+              //})
+          //})
+      //})
       .catch(err => console.log(err))
+
+  },
+
+  getData: (callback) => {
+    productModel.find((err, result) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, result);
+      }
+    }).limit(5);
   },
 
   postData: (body, callback) => {

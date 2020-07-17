@@ -2,7 +2,7 @@ const { client } = require('./index.js');
 
 const model = {
   getData: (callback) => {
-    client.query(`SELECT * FROM products`, (err, result) => {
+    client.query(`EXPLAIN ANALYZE SELECT * FROM products`, (err, result) => {
       if(err) {
         callback(err);
       } else {

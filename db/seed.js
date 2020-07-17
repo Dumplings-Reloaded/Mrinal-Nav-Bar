@@ -3,20 +3,21 @@ const faker = require('faker');
 const fs = require('fs');
 
 var generateName = () => {
-  var nameArray = [
-    "Shuriken", "Shirt", "Yoga Pants", "Sweater", "T-shirt", "Shorts", "Shoes",
-    "Hats", "Swords", "Kunai", "Scythe", "Yoga Mat", "Coat", "Jacket", "Stealth Mask"
-  ];
+  var randomName = faker.commerce.product();
 
-  return(nameArray[Math.floor(Math.random() * 15)]);
+  return randomName;
 }
 
 var generatePrice = () => {
-  return Math.floor((Math.random() * 150) + 1);
+  var randomPrice = Math.floor(Math.random() * 100) + 50;
+
+  return randomPrice;
 }
 
 var generateImg = () => {
-  return "https://mock-website-glossier.s3-us-west-1.amazonaws.com/gettyimages-1176299915-2048x2048.jpg";
+  var randomImg = 'shorturl.at/dqAJ3';
+
+  return randomImg;
 }
 
 var generateSeed = () => {

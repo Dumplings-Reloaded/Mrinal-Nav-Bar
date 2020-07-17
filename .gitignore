@@ -29,5 +29,5 @@ public/bundle.js
 package-lock.json
 
 config/
+database/contentwo.csv
 db/content.csv
-database/content2.csv
