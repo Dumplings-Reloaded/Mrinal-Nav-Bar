@@ -31,3 +31,4 @@ package-lock.json
 config/
 database/contentwo.csv
 db/content.csv
+newrelic.js
