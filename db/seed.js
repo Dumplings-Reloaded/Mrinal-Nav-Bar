@@ -22,7 +22,7 @@ var generateImg = () => {
 
 var generateSeed = () => {
   const writeContent = fs.createWriteStream('./content.csv');
-  writeContent.write('id,name,price,img\n', 'utf8');
+  writeContent.write('name,price,img\n', 'utf8');
 
   function writeTenMillion(writer, encoding, callback) {
     let i = 10000000;
@@ -33,7 +33,7 @@ var generateSeed = () => {
       do {
         i -= 1;
         id += 1;
-        const data = `${id}, '${generateName()}', ${generatePrice()}, '${generateImg()}'\n`;
+        const data = `${generateName()}, ${generatePrice()}, ${generateImg()}\n`;
         if (i === 0) {
           writer.write(data, encoding, callback);
         } else {

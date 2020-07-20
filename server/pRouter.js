@@ -1,3 +1,4 @@
+let nr = require('newrelic');
 let router = require('express').Router();
 let otherController = require('./otherController.js');
 
