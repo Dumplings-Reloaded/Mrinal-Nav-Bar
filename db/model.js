@@ -2,7 +2,7 @@ const { client } = require('./index.js');
 
 const model = {
   getData: (callback) => {
-    client.query(`EXPLAIN ANALYZE SELECT * FROM products`, (err, result) => {
+    client.query(`SELECT * FROM products WHERE id BETWEEN 9000000 AND 9000020`, (err, result) => {
       if(err) {
         callback(err);
       } else {
