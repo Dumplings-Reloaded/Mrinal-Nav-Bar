@@ -2,7 +2,7 @@ const { Client } = require('pg');
 require('pg-essential').patch({ Client });
 
 const client = new Client({
-  user: 'root',
+  user: 'ubuntu',
   host: 'localhost',
   database: 'newproducts',
   password: 'password',
