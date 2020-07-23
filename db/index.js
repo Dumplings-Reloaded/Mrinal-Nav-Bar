@@ -3,7 +3,7 @@ require('pg-essential').patch({ Client });
 
 const client = new Client({
   user: 'ubuntu',
-  host: 'localhost',
+  host: 'ec2-54-153-94-249.us-west-1.compute.amazonaws.com',
   database: 'newproducts',
   password: 'password',
   port: 5432
